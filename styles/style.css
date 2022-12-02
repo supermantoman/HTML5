@@ -34,19 +34,15 @@ body {
 .main{
   background: lightgreen;
   height: 50vh;
-  display: flow-root;
-  padding: 0 15px;
-}
-
-.group{
-  margin: 0 15px;
-  float: left;
+  display:flex;
+  flex-direction: row;
 }
 
 .group1{
   background-color: violet;
   width: 250px;
 }
+
 .group2{
   background-color: salmon;
   width: 380px;
@@ -69,5 +65,6 @@ body {
 .footer-inner{
   background: silver;
   height: 15vh;
+  width: 500px;
+  overflow: hidden;
 }
-
