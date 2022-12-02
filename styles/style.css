@@ -32,10 +32,17 @@ body {
 }
 /* 메인 */
 .main{
-  background: lightgreen;
-  height: 50vh;
-  display:flex;
-  flex-direction: row;
+  background: lightgreen; 
+  min-height: 450px; /* 최소 높이 값 */
+  display:flex; /* flex 에서 두 줄 같이 준다 보통 */
+  flex-flow: row nowrap; /* 두 줄 같이 준다 보통 */
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px;
+}
+
+.group {
+  margin: 0 15px;
 }
 
 .group1{
@@ -49,6 +56,7 @@ body {
 }
 .group3{
   background-color: gold;
+  /* flex-grow: 1; 남은 영역을 다 채워줌, 반응형에서 쓰임 */
   width: 190px;
 }
 
