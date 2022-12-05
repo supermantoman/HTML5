@@ -1,11 +1,12 @@
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./fontello.css);
 
 /* 기본 스타일 */
 *, *::before, *::after{
-  box-sizing: border-box;
+  box-sizing: border-box; 
+  /* 상속이슈때문에 비포와 애프터를 같이 선언해주어야 한다. */
 }
-
 
 /* 본문 스타일 */
 body {
@@ -25,7 +26,6 @@ body {
   padding: 0 30px;
   height: 15vh;
   border-radius: 0 0 15px 15px;
-  position: relative;
 }
 
 /* 로고 */
@@ -37,14 +37,32 @@ body {
 
 /* 텍스트 링크 모음 */
 .member {
-  background-color: aqua;
+  background-color: pink;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-end; /* 끝으로 보내기 */
 }
+
+/* :before / ::before => first child */
+/* :after / ::after => last child */
+
+/* .member li::before {
+  content: ":"; /* content = 텍스트 추가 } */
+
+
+  /* 선택자의 우선순위 규칙이 존재한다.
+  li(Type Selector) - 1점
+  .first(Class selector) - 10점
+  #item(ID selector) - 100점
+  ::before - 1점
+  */
 
 /* 비주얼 */
 .visual{
   background: orange;
   height: 10vh;
 }
+
 /* 메인 */
 .main{
   background: lightgreen;
