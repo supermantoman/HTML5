@@ -8,8 +8,16 @@
   /* 상속이슈때문에 비포와 애프터를 같이 선언해주어야 한다. */
 }
 
+/* 링크 스타일 */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 /* 본문 스타일 */
 body {
+  color: #212121;
   background: #ccc  ;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
@@ -56,6 +64,11 @@ body {
   #item(ID selector) - 100점
   ::before - 1점
   */
+
+.member a {
+  text-transform: capitalize;
+}
+
 
 /* 비주얼 */
 .visual{
