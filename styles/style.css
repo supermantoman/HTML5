@@ -1,6 +1,19 @@
 @import url(./normalize.css);
 @import url(./reset.css);
 
+
+/* 숨김 콘텐츠 */
+/* 보조기기에 접근한다 스크린리더 못읽게 하는게 display:none; 그래서 쓰지 말 것! 존재해야만 DOM Tree 구조에서 읽을 수 있음! visability: hidden도 부적절. */
+.a11y-hidden {
+  background-color: yellow;
+  
+  /* 앱솔루트주면 혼자 떠있는 상태 */
+  position: absolute;
+  
+  /* 안드로메다 ㄱㄱ로 숨기는 방식, 이렇게 하면 스크린리더가 읽을 수 있다! 화면에서는 안보이지만 */
+  top: -9999em; 
+}
+
 /* 기본 스타일 */
 *, *::before, *::after{
   box-sizing: border-box;
