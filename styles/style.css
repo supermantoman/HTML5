@@ -12,12 +12,20 @@ a {
   text-decoration: none;
 }
 
+/* html에 폰트 기본값을 주고 그 다음 rem, em 으로 계산함 */
+html {
+  font-size: 10px;
+} 
+
 /* 본문 스타일 */
 body {
+  font-size: 1.4rem;
   color: #212121;
   background: #ccc;
   font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
+
+/* rem 단위는 무조건 루트를 기준으로 게산함. em 단위는  */
 
 /* 레이아웃 */
 .header, .visual, .main, .slogan, .footer-inner{
@@ -26,10 +34,11 @@ body {
 }
 
 /* 헤더 */
-.header{
+/* 높이는 가급적 실무에서 정해두지 않는 것이 좋다. */
+/* 콘텐츠에 따라 유연하게 늘어날 수 있기 때문! */
+.header {
   background: #fff;
   padding: 0 30px;
-  height: 15vh;
   border-radius: 0 0 15px 15px;
   position: relative;
 }
