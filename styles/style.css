@@ -2,7 +2,7 @@
 @import url(./reset.css);
 
 /* 숨김 콘텐츠 */
-/* 보조기기에 접근한다 스크린리더 못읽게 하는게 display:none; 그래서 쓰지 말 것! 존재해야만 DOM Tree 구조에서 읽을 수 있음! visability: hidden도 부적절. */
+/* 보조기기에 접근한다 스크린리더 못읽게 하는게 display:none; 그래서 이 때는 쓰지 말 것! 존재해야만 DOM Tree 구조에서 읽을 수 있음! visability: hidden도 부적절. */
 .a11y-hidden {
   background-color: red;
   
@@ -14,8 +14,6 @@
 
   width: 1px;
   height: 1px;
-
-  /*  */
   overflow: hidden;
   clip-path: polygon(0 0, 0 0, 0 0);
 }
@@ -75,13 +73,15 @@ body {
   text-align: right;
   padding: 4px 0;
   /* position 속성을 활용해 .member 영역을 오른쪽으로 10px 만큼 이동하는 방법
-  position: relative; /* 자기 자신 기준으로 움직임
-  right: -10px; */
+  position: relative; 
+  /* 자기 자신 기준으로 움직임 */
+  /* right: -10px; */
   transform: translateX(10px);
 }
 
 .member li {
   /* background-color: pink; */
+  /* 가로방향으로 흘러가게끔 만들 수 있는 inline-block */
   display: inline-block;
 }
 
@@ -121,6 +121,10 @@ body {
   height: 47px;
 }
 
+.menu li {
+  float: left;
+}
+
 .menu-item {
   float: left;
   border-left: 2px solid #fff;
@@ -136,13 +140,38 @@ body {
   color: #fff;
   text-shadow: 1px 1px 0 #000, -1px -1px 0 #000;
 }
-/* 플로트는 공간이 충분하지 않으면 밑으로 떨어짐
- */
+
+.is-active .menu-button {
+  color: #ff0;
+}
+
+/* 가상선택자인 before, after은 content를 꼭 써야 나타남 */
+/* 가상선택자는 인라인 속성을 가짐 */
+.is-active .menu-button::after {
+  /* content가 없으면 블록이 나타나지 않음. 그래서 입력 */
+  content: "";
+  /* 인라인속성(=같은라인에 포함되는 속성임)을 block으로 바꿔줌으로써 아래로 보내자 */
+  display: block;
+  background-color: #ff0;
+  /* 그리고 검정색 라인을 그려주기 */
+  border-top: 2px solid #212121;
+}
+
+/* 비포나 애프터를 이용하면 무조건 인라인으로 생성됨 */
+/* float는 공간이 충분하지 않으면 밑으로 떨어짐 */
 
 .sub-menu {
   background-color: #ccc;
   position: absolute;
   display: none;
+}
+
+.is-active .sub-menu {
+  display: block;
+}
+
+sub-menu li {
+  float: left;
 }
 
 /* 비주얼 */
