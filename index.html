@@ -7,8 +7,12 @@
   <title>웹카페</title>
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/static/pretendard.css" />
   <link rel="stylesheet" href="./styles/style.css" />
+  <!-- defer html5에 추가된 새로운 속성, 추가하면 작동한다! -->
+  <script src="./js/main.js" defer></script>
 </head>
 <body>
+
+    <!-- 헤더 -->
   <header class="header">
 
     <!-- 로고 Start -->
@@ -130,16 +134,27 @@
         </li>
       </ul>
     </nav>
-
-    <!-- 헤더 -->
   </header>
-  <div class="visual">비주얼</div>
+
+  <!-- 비쥬얼 영역 -->
+  <div class="visual">
+    <div class="visual-text">
+      <!-- &amp; = HTML엔티티 '&' -->
+      Web Standards &amp; Accessibility
+    </div>
+  </div>
+
+  <!-- 메인 -->
   <main class="main">
     <div class="group group1">그룹1</div>
     <div class="group group2">그룹2</div>
     <div class="group group3">그룹3</div>
   </main>
+
+  <!-- 슬로건 -->
   <article class="slogan">슬로건</article>
+
+  <!-- 푸터 -->
   <footer class="footer">
     <div class="footer-inner">
       푸터

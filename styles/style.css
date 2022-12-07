@@ -1,3 +1,4 @@
+@import url(./fonts.css);
 @import url(./normalize.css);
 @import url(./reset.css);
 
@@ -65,6 +66,7 @@ body {
   position: absolute;
   top: 45px;
   left: 50px;
+  z-index: 10;
 }
 
 /* 텍스트 링크 모음 */
@@ -121,13 +123,23 @@ body {
   height: 47px;
 }
 
-.menu li {
-  float: left;
+.menu > li:nth-child(-n + 3) {
+  position: relative;
 }
 
 .menu-item {
+  /* 안에있는 자식요소에 기준을 주기위해 relative 준다. */
+  position: relative;
   float: left;
   border-left: 2px solid #fff;
+}
+
+.menu-html, .menu-css, .menu-standards {
+  left: 0;
+}
+
+.menu-accessibility, .menu-qna, .menu-archive {
+  right: 0;
 }
 
 .menu-button {
@@ -152,7 +164,6 @@ body {
   content: "";
   /* 인라인속성(=같은라인에 포함되는 속성임)을 block으로 바꿔줌으로써 아래로 보내자 */
   display: block;
-  background-color: #ff0;
   /* 그리고 검정색 라인을 그려주기 */
   border-top: 2px solid #212121;
 }
@@ -161,23 +172,80 @@ body {
 /* float는 공간이 충분하지 않으면 밑으로 떨어짐 */
 
 .sub-menu {
-  background-color: #ccc;
   position: absolute;
+  top: 47px;
   display: none;
 }
 
 .is-active .sub-menu {
   display: block;
+  white-space: nowrap;
 }
 
-sub-menu li {
-  float: left;
+.sub-menu li {
+  display: inline-block;
+  padding-left: 1em;
+}
+
+.sub-menu a::before {
+  content: "\e802";
+  font-family: "fontello";
+  font-weight: normal;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  margin-right: 0.2em;
+  text-align: center;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1em;
+  margin-left: 0.2em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sub-menu a:hover::before,
+.sub-menu a:focus::before {
+  content: "\e801";
+}
+
+.sub-menu a {
+  display: inline-block;
+  padding: 10px 0;
+}
+
+.sub-menu a:hover, .sub-menu a:focus {
+  color: red;
 }
 
 /* 비주얼 */
+@keyframes moveEffect {
+  0%{
+    font-size: 12px;
+    color: rgba(0,0,0,0.1);
+    transfrom: translate(0,0);
+  }
+  100%{
+    font-size: 24px;
+    color: rgba(0,0,0,1);
+    transform: translate(400px, 75px);
+  }
+}
+
 .visual{
-  background: orange;
-  height: 10vh;
+  background: pink;
+  height: 120px;
+  position: relative;
+}
+
+.visual-text {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: coral;
+  animation-name: moveEffect;
+  animation-duration: 2000ms;
+  animation-fill-mode: forwards;
+  /* 원래는 block인데 안튀어나가게 inline-block을 줌 */
+  display: inline-block;
 }
 
 /* 메인 */
