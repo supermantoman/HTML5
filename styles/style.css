@@ -37,10 +37,19 @@ html {
 
 /* 본문 스타일 */
 body {
-  font-size: 1.4rem;
-  color: #212121;
-  background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 100%);
-  font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+ /* em, rem 단위를 사용해보기 */
+font-size: 1.4rem;
+color: #212121;
+background: #ccc
+  linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%);
+font-size: 1.4rem;
+font-family: "Pretendard Variable", Pretendard, -apple-system,
+  BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI",
+  "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji",
+  "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+background: url("./images/bg_flower.png") no-repeat 50% 0,
+  #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #fff 70%, #fff 100%)
+    repeat 0 0;
 }
 
 /* rem 단위는 무조건 루트를 기준으로 게산함. em 단위는  */
@@ -168,7 +177,7 @@ body {
   border-top: 2px solid #212121;
 }
 
-/* 비포나 애프터를 이용하면 무조건 인라인으로 생성됨 */
+/* 비포나 애프터를 이용하면 무조건 인라인 속성으로 생성됨 */
 /* float는 공간이 충분하지 않으면 밑으로 떨어짐 */
 .sub-menu {
   position: absolute;
@@ -218,6 +227,11 @@ body {
 }
 
 /* 비주얼 */
+
+/* 키프레임 = animation 속성 부르기임. 그다음 함수 이름을 선언해주어야 한다. 
+ex) moveEffect같이 카멜표현방식으로 표현하기. 걸맞는 이름을 생각해서 시나리오의 이름을 적어준다.
+마치 씬의 이름을 정하듯이. 그리고 나서 필요한 디자인을 구현하기 위한 필요한 속성이 무엇인지 고민해보고 적어보기.
+ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼시티 투명에서 밝아지기(color:hsla) */
 @keyframes moveEffect {
   0%{
     font-size: 12px;
@@ -231,23 +245,66 @@ body {
   }
 }
 
+@keyframes fadeEffect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  /* 100% {
+    opacity: 1; 없어졌다 다시 생기게 함 */
+}
+
 .visual{
-  background: pink;
+  /* background: pink; */
   height: 120px;
   /* overflow: hidden; */
   position: relative;
 }
 
+.visual::before, .visual::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  /* animation 요약 표기법은 아래 주석과 같음 */
+  /* animation: fadeEffect 4000ms infinite alternate; */
+  animation-name: fadeEffect; /* 위에 선언한 이름으로 불러주는 것 */
+  animation-duration: 4000ms; /* 4초 */
+  animation-iteration-count: infinite; /* 무한반복 속성임 */
+  animation-direction: alternate;
+  /* background-color: yellow; */
+}
+
+.visual::before {
+  /* background-color: yellow; */
+  /* ,로 구분해서 여러개의 이미지를 부를 수 있다. 폰트도 여러개 적용가능 순서대로. */
+  background: url("./images/ani_flower_01.png") no-repeat 0 -10px,
+              url(./images/ani_flower_02.png) no-repeat 600px 0;
+}
+
+.visual::after {
+  /* background-color: #fff; */
+  background: url("./images/ani_flower_03.png") no-repeat 300px 0,
+              url(./images/ani_flower_04.png) no-repeat 800px 0;
+  animation-delay: 3000ms;
+}
+
 .visual-text {
-  background-color: #fff;
+  /* background-color: #fff; */
   font-family: Georgia, 'Times New Roman', Times, serif;
+  /* animation의 요약표기법은 아래, 순서는 상관없음, 일반적으로 이름과 듀레이션은 젤 앞 필수 */
+  /* animation: moveEffect 400ms ease-in-out forwards; */
   animation-name: moveEffect;
-  animation-duration: 3000ms;
+  animation-duration: 400ms;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   /* 원래는 block인데 안튀어나가게 inline-block을 줌 */
-  /* display: inline-block; */
-  position: absolute;
+  display: inline-block;
+  /* position: absolute; */
 }
 
 /* 메인 */
