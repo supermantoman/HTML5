@@ -414,8 +414,28 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
 .sign {
   background-color: #fff;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 6px 4px 4px 10px;
+  font-size: 12px;
+}
+
+/* 
+.sign {
+  display: inline-block;
+} */
+
+.sign a {
+  display: block; /* a 태그는 기본속성 inline */
+  padding: 6px 0; /* 클릭 범위 여유있게 */
+  letter-spacing: -0.01em; /* 자간 줄이기, 현업 많이 사용 */
+}
+
+.sign a::before {
+    content: "\e801";
+    font-family: "fontello";
+    margin-right: 4px;
+    color: orangered;
 }
 
 /* 슬로건 */
