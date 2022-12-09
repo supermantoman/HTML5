@@ -4,9 +4,8 @@
 
 /* 숨김 콘텐츠 */
 /* 보조기기에 접근한다 스크린리더 못읽게 하는게 display:none; 그래서 이 때는 쓰지 말 것! 존재해야만 DOM Tree 구조에서 읽을 수 있음! visability: hidden도 부적절. */
-.a11y-hidden {
-  background-color: red;
-  
+.a11y-hidden, legend {
+  background-color: red;  
   /* 앱솔루트주면 혼자 떠있는 상태 */
   position: absolute;
 
@@ -310,21 +309,26 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
 /* 메인 */
 
 .main{
-  background: lightgreen;
-  height: 50vh;
-  display: flow-root;
-  padding: 0 15px;
+    background: lightgreen;
+    height: 500vh;
+    display: flow-root;
+    padding: 0 15px;
+    background: #fff;
+    min-height: 450px;
+    padding: 30px 15px;
+    border-radius: 15px 15px 0 0;
 }
 
-.group{
+/* 로그인 영역 */
+.group {
   margin: 0 15px;
   float: left;
 }
 
 .group1{
-  background-color: violet;
   width: 250px;
 }
+
 .group2{
   background-color: salmon;
   width: 380px;
@@ -332,6 +336,86 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
 .group3{
   background-color: gold;
   width: 190px;
+}
+
+.login {
+  box-shadow: 5px 5px 0 0 #ccc;
+  background: orange radial-gradient(circle at right top, orange, orangered);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.login-title {
+  /* background-color: skyblue; */
+  color: yellow;
+  font-size: 15px;
+  font-weight: 700;
+  text-indent: 10px; /* 들여쓰기 */
+}
+
+.login-form {
+  background-color: #fff;
+  margin-top: 10px;
+  border-radius: 5px 5px 5px 5px;
+  padding: 10px 10px 0 10px;
+}
+
+#userEmail, #userPw {
+  width: 90px;
+}
+
+.user-email {
+  background-color: #e85e2c;
+  display: inline-block;
+}
+
+.login-form label {
+  /* background-color: salmon; */
+  width: 55px;
+  display: inline-block;
+}
+
+.login-form input {
+  width: 90px;
+  height: 24px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 5px;
+  border-radius: 3px;
+}
+
+.login-form fieldset {
+  position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 5px;
+}
+
+.user-mail, user-pw {
+  margin-bottom: 5px;
+  /* background-color: rgb(200, 200, 253); */
+}
+
+.user-pw {
+  /* background-color: #ff0; */
+}
+
+.login-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 53px;
+  background-color: orangered;
+  color: #fff;
+  border: 0;
+  padding: 0 8px;
+  border-radius: 3px;
+  font-size: 13px;
+}
+
+.sign {
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
 }
 
 /* 슬로건 */
