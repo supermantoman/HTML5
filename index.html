@@ -147,6 +147,7 @@
   <!-- 메인 -->
   <main class="main clearfix">
     <!-- 논리적 순서를 먼저 정해야 한다. -->
+
     <div class="group group1">
       <!-- 로그인영역 -->
       <section class="login">
@@ -177,9 +178,24 @@
           </ul>
           </form>
       </section>
+
+      <!-- 유효성 검사 영역 -->
+      <!-- a11y-hidden : css가서 속성 값 어케주는지 확인! -->
+      <h2 class="a11y-hidden"></h2>
+      <ul class="validation-list">
+        <!-- target blank, rel=noopener noreferrer 는 새창으로 이동하는 방법 + title은 이름 명시하는 법 -->
+        <li>
+          <a href="/" target="_blank" rel="noopener noreferrer" title="마크업 유효성 검사 사이트로 이동(새창)">W3C Markup Validation</a>
+        </li>
+        <li>
+          <a href="/" target="_blank" rel="noopener noreferrer" title="CSS 유효성검사 사이트로 이동(새창)">CSS Validation Service</a>
+        </li>
+      </ul>
     </div>
 
-    <div class="group group2">그룹2</div>
+    <div class="group group2">
+
+    </div>
     <div class="group group3">그룹3</div>
   </main>
 
