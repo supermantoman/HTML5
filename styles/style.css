@@ -439,13 +439,36 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
 
 /* 유효성 검사 */
 .validation-list {
-  background-color: yellow;
+  /* background-color: yellow; */
   margin-top: 25px;
 }
 
 .validation-list li {
-  background-color: pink;
   margin-top: 10px;
+}
+
+/* 테두리부터 a태그까지 다 링크 클릭으로 만드는 방식 */
+.validation-list a {
+  display: block;
+  padding: 8px 15px 8px 50px;
+  border-radius: 9999px;
+  /* 브라우저 여러개 호환 고려해서 젤앞 ccc 도 보완상 붙임 */
+  background: url(./images/validation_icon.png) no-repeat 25px 50%, #ccc linear-gradient(to bottom, #ccc, #eee);
+  font-weight: 400;
+  border: 1px solid #999;
+}
+
+.validation-list a::before {
+  /* content: url(./images/validation_icon.png); */
+  /* padding-right: 5px; */
+  /* vertical-align은 인라인요소에만 가질 수 있다. a는 inline 요소임. */
+  /* vertical-align: middle; */
+}
+
+.validation-list a:hover, 
+/* 호버할때 키보드도 같이 고고! */
+.validation-list a:focus {
+  color: red;
 }
 
 /* 슬로건 */
