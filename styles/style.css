@@ -1,6 +1,7 @@
 @import url(./fonts.css);
 @import url(./normalize.css);
 @import url(./reset.css);
+@import url(./module.css);
 
 /* 숨김 콘텐츠 */
 /* 보조기기에 접근한다 스크린리더 못읽게 하는게 display:none; 그래서 이 때는 쓰지 말 것! 존재해야만 DOM Tree 구조에서 읽을 수 있음! visability: hidden도 부적절. */
@@ -827,7 +828,40 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
   background-position: -36px 0;
 }
 
+.favorite {
+  background-color: pink;
+  position: relative;
+}
 
+
+.favorite-list li {
+  margin-top: 10px;
+}
+
+/* 앞에 순위 추가하는 방법 */
+.favorite-list li::before {
+  content: "1";
+  background-color: #aaa;
+  color: #fff;
+  padding: 1px 6px;
+  font-size: 1.2rem;
+  margin-right: 5px;
+  border-radius: 3px;
+}
+
+.favorite-list {
+  background-color: yellow;
+  /* padding-left: 40px; */
+  /* overflow: hidden; */ /* 이거는 화면에서는 숫자를 가림 */
+  list-style-type: none; /* 스크린 리더가 읽지 않도록 하려면 줘야 함*/
+}
+
+.favorite-more {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 8px;
+}
 
 /* 슬로건 */
 .slogan{
