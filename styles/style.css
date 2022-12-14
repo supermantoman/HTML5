@@ -698,6 +698,11 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
   top: 10px;
 }
 
+.news-item-thumbnail img {
+  box-shadow: 5px 5px 0 0 #ccc;
+  margin-bottom: 15px;
+}
+
 .news-item-thumbnail figcaption {
   padding: 15px 0 0 20px;
 }
@@ -730,12 +735,107 @@ ex) 폰트가 1-확장(font-size), 2-해당위치로이동(transform_ 3-오퍼�
   padding-right: 4px;
 }
 
+/* 신규 이벤트 및 관련 사이트 */
+
+.group3 {
+
+}
+
+.gradient-effect {
+  background: #ccc linear-gradient(to bottom, #ccc, #eee);
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  position: relative;
+  padding: 10px;
+}
+
+.accent-color {
+  color: #e85e2c;
+}
+
+.event {
+  border-bottom: 1px solid #aaa;
+}
+
+.event-thumbnail, .event-brief {
+  margin: 10px 0;
+}
+
+.event-thumbnail {
+  /* background-color: yellow; */
+  box-shadow: 5px 5px #999;
+}
+
+.event-brief {
+  line-height: 1.5;
+}
+
+.related {
+  margin-top: 10px;
+}
+
+.related-list {
+  background-color: #fff;
+  margin-top: 10px;
+  border: 1px solid #aaa;
+  border-radius: 8px;
+  margin-top: 10px;
+  transition: height 400ms 0ms, padding 400ms 400ms;
+  padding: 5px 0 0 10px;
+  height: 27px;
+  overflow: hidden;
+}
+
+.related-list:hover,
+.related-list:focus {
+  height: 147px;
+  padding: 10px;
+}
+
+.related-list li {
+  margin-bottom: 10px;
+}
+
+.event-title {
+  /* background-color: pink; */
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.event-button-wrapper {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  overflow: hidden;
+  height: 18px;
+}
+
+.event-button-wrapper button {
+  display: block;
+  width: 19px;
+  height: 100%; /* 크로스 브라우징 이슈 */
+  border: 0;
+  padding: 0;
+  background: url("./images/back_forward.png");
+  background-repeat: no-repeat;
+  padding: 18px 0 0 0;
+  line-height: 24px;
+}
+
+.event-button-wrapper .event-button-next {
+  background-position: -36px 0;
+}
+
+
+
 /* 슬로건 */
 .slogan{
   background: skyblue;
   height: 10vh;
   clear: both;
 }
+
 /* 푸터 */
 .footer{
   background: #ccc linear-gradient(to bottom, #ccc 0%, #eee 35%, #efefef 60%, #fff 100%);
